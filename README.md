@@ -1,85 +1,107 @@
-🧠 AskYourRights.AI
-Empowering individuals to understand their legal rights through AI.
+# ⚖️ AskYourRights.AI
 
-AskYourRights.AI is an AI-powered legal assistant designed to help users comprehend their rights by analyzing legal documents, such as the Universal Declaration of Human Rights. Utilizing Retrieval-Augmented Generation (RAG) techniques, this application provides accurate and context-aware answers to legal inquiries.
+**Understand your rights — without needing a law degree.**
 
-🚀 Features
-PDF Upload: Seamlessly upload legal documents in PDF format.
+AskYourRights.AI is an AI-powered legal assistant that helps users query legal documents, such as the Universal Declaration of Human Rights, and get context-aware answers. It uses Retrieval-Augmented Generation (RAG) with a conversational interface to bring clarity to complex legal text.
 
-Intelligent Parsing: Extract and process text using PDFPlumberLoader.
+---
 
-Text Chunking: Divide documents into manageable chunks with RecursiveCharacterTextSplitter.
+## 🚀 Features
 
-Embeddings Generation: Create embeddings using OllamaEmbeddings.
+- 📄 Upload and process PDF documents
+- 🧠 Ask natural language questions and get informed answers
+- 🔍 Uses FAISS vector store for fast similarity search
+- 🗂️ Text splitting and embedding with LangChain
+- 🤖 Powered by DeepSeek models and Groq LLMs
+- 💬 Built with Streamlit for an intuitive chat experience
 
-Vector Store: Store and retrieve document embeddings with FAISS.
+---
 
-Conversational Interface: Engage in a Q&A session with the AI lawyer via Streamlit.
+## 🛠 Installation
 
-Custom Prompting: Utilize tailored prompts to ensure accurate and context-relevant responses.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/AymanMaab/askyourrights.ai.git
+   cd askyourrights.ai
+````
 
-🛠️ Installation
-Clone the Repository:
+2. **Create and Activate a Virtual Environment**
 
-bash
-Copy
-Edit
-git clone https://github.com/AymanMaab/askyourrights.ai.git
-cd askyourrights.ai
-Create a Virtual Environment:
+   ```bash
+   python -m venv myenv
+   myenv\Scripts\activate        # On Windows
+   source myenv/bin/activate     # On macOS/Linux
+   ```
 
-bash
-Copy
-Edit
-python -m venv myenv
-source myenv/bin/activate  # On Windows: myenv\Scripts\activate
-Install Dependencies:
+3. **Install Dependencies**
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Set Up Environment Variables:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Create a .env file in the root directory and add your API key:
+4. **Add your API Key**
+   Create a `.env` file in the root folder:
 
-env
-Copy
-Edit
-GROQ_API_KEY=your_api_key_here
-📄 Usage
-Run the Streamlit Application:
+   ```
+   GROQ_API_KEY=your_groq_api_key_here
+   ```
 
-bash
-Copy
-Edit
-streamlit run frontend.py
-Interact with the AI Lawyer:
+---
 
-Upload a legal PDF document.
+## 📦 File Structure
 
-Enter your legal question in the text area.
-
-Receive context-aware answers based on the uploaded document.
-
-📁 Project Structure
-bash
-Copy
-Edit
+```
 askyourrights.ai/
-├── pdfs/                         # Directory for uploaded PDF files
-├── vector_db/                    # FAISS vector database storage
-├── frontend.py                   # Streamlit frontend application
-├── rag_pipeline.py               # RAG pipeline implementation
-├── vector_database.py            # Vector database setup and management
-├── requirements.txt              # Python dependencies
-├── .env                          # Environment variables
-└── README.md                     # Project documentation
-🤝 Contributing
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
+├── pdfs/                    # Uploaded PDF files
+├── vector_db/               # FAISS vector storage
+├── rag_pipeline.py          # RAG logic with Groq LLM
+├── vector_database.py       # PDF loading, chunking, embedding
+├── frontend.py              # Streamlit app
+├── requirements.txt         # Dependencies
+├── .env                     # Your API key
+└── README.md
+```
 
-📄 License
-This project is licensed under the MIT License.
+---
 
-📫 Contact
-For any inquiries or feedback, please contact Ayman Maab.
+## 💡 Usage
+
+Run the Streamlit app:
+
+```bash
+streamlit run frontend.py
+```
+
+1. Upload a legal PDF (e.g. constitution, declaration, etc.)
+2. Ask a legal question in natural language
+3. Get an answer backed by the document context
+
+---
+
+## 🧠 Tech Stack
+
+* [LangChain](https://www.langchain.com/)
+* [Groq](https://groq.com/) LLMs (e.g. `deepseek-r1`)
+* [FAISS](https://github.com/facebookresearch/faiss) for vector search
+* [Streamlit](https://streamlit.io/) for the UI
+* [Ollama Embeddings](https://github.com/ollama) for vectorization
+
+---
+
+## 🤝 Contributing
+
+Got an idea? Found a bug? PRs are welcome.
+Please open an issue or submit a pull request to collaborate!
+
+---
+
+## 📄 License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## 🙋‍♂️ Author
+
+Made with ❤️ by [Ayman Maab](https://github.com/AymanMaab)
+Let’s make the law more accessible — one prompt at a time.
